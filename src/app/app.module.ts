@@ -30,7 +30,7 @@ import { APP_BASE_HREF } from '@angular/common';
     MaterialModule,
     ReactiveFormsModule
   ],
-  providers: [ AuthGuard, {provide: APP_BASE_HREF, useValue: '/'} ],
+  providers: [ AuthGuard ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
