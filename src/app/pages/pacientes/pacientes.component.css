@@ -1,0 +1,11 @@
+mat-card {
+  max-width: 100% !important;
+  margin: 1em;
+}
+table {
+  width: 100%;
+}
+mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}

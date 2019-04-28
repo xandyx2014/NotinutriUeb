@@ -1,0 +1,17 @@
+<mat-card class="login-card" fxLayoutAlign="center center">
+  <mat-card-content>
+      <mat-card style="width: 350px;" >
+          <form [formGroup]="myForm" fxLayout="column" >
+            <h2>Login Usuario</h2>
+            <mat-form-field>
+              <input formControlName="usuario" matInput placeholder="Nombre de usuario" required>
+            </mat-form-field>
+            <mat-form-field>
+              <input formControlName="password" matInput placeholder="Contraseña" required type="password">
+            </mat-form-field>
+            <button mat-raised-button color="primary" (click)="loguear()" [disabled]="myForm.invalid">Login</button>
+          </form>
+        </mat-card>
+  </mat-card-content>
+</mat-card>
+

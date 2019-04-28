@@ -1,0 +1,10 @@
+mat-card {
+  width: 90%;
+  margin: 1em;
+}
+mat-accordion {
+  max-width: 90%;
+}
+mat-slider {
+  width: 100%;
+}
