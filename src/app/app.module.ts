@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthGuard } from './guards/auth.guard';
+import { APP_BASE_HREF } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { AuthGuard } from './guards/auth.guard';
     MaterialModule,
     ReactiveFormsModule
   ],
-  providers: [ AuthGuard ],
+  providers: [ AuthGuard, {provide: APP_BASE_HREF, useValue: '/'} ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
