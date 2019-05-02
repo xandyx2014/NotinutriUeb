@@ -45,7 +45,6 @@ export class InyeccionComponent implements OnInit, OnDestroy {
               private router: Router,
               private activatedRoute: ActivatedRoute,
               private pacienteService: PacientesService,
-              private refuerzoService: RefuerzoService,
               private inyeccionService: InyeccionService,
               private fb: FormBuilder) { }
 
@@ -54,7 +53,6 @@ export class InyeccionComponent implements OnInit, OnDestroy {
       this.idPaciente = id;
       this.doctor = this.loginServie.usuarioLogueado();
       this.obtenerVacuna();
-      this.obtenerRefuerzo();
       this.crearFormulario();
     });
   }
@@ -75,19 +73,11 @@ export class InyeccionComponent implements OnInit, OnDestroy {
       this.paciente = resp.data;
     });
   }
-  obtenerRefuerzo() {
-    this.refuerzoSubscription = this.refuerzoService.showRefuerzo()
-      .subscribe( resp => {
-        this.refuerzos = resp.data;
-      });
-  }
-
   crearFormulario() {
     this.myForm = this.fb.group({
       fecha_inyectada: [new Date(), Validators.required],
       fecha_sgte: ['', Validators.required],
       vacuna_id: ['', Validators.required],
-      refuerzo_id: ['', Validators.required],
       paciente_id: [ this.idPaciente, Validators.required],
       doctor_id: [this.doctor.id, Validators.required],
     });
