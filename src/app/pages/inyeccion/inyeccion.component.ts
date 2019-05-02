@@ -84,7 +84,6 @@ export class InyeccionComponent implements OnInit, OnDestroy {
   }
 
   crearInyeccion() {
-    console.log( datefn.format(this.myForm.value.fecha_inyectada, 'YYYY/MM/DD') );
     this.inyeccionService.storeInyeccion({
       ...this.myForm.value,
       fecha_inyectada: datefn.format(this.myForm.value.fecha_inyectada, 'YYYY/MM/DD'),
