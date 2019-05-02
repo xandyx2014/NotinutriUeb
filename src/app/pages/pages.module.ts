@@ -11,6 +11,7 @@ import { InyeccionComponent } from './inyeccion/inyeccion.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthGuard } from '../guards/auth.guard';
 import { UsuarioComponent } from './usuario/usuario.component';
+import { DateInyeccionPipe } from '../pipes/date-inyeccion.pipe';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,9 @@ import { UsuarioComponent } from './usuario/usuario.component';
     PacienteComponent,
     VacunasComponent,
     InyeccionComponent,
-    UsuarioComponent],
+    UsuarioComponent,
+    DateInyeccionPipe
+  ],
   imports: [
     CommonModule,
     PagesRoutingModule,

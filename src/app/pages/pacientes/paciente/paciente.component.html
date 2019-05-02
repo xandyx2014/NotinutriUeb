@@ -28,8 +28,8 @@
                 <mat-chip color="accent" selected> {{i + 1}} </mat-chip>
 
               </mat-list-item>
-                <mat-list-item role="listitem">Fecha inyectada: {{inyeccion.fecha_inyectada |date: 'yyyy/MM/dd'}}</mat-list-item>
-                <mat-list-item role="listitem">Fecha siguiente: {{inyeccion.fecha_sgte | date: 'dd/MM/yyyy'}}</mat-list-item>
+                <mat-list-item role="listitem">Fecha inyectada: {{inyeccion.fecha_inyectada | dateInyeccion}}</mat-list-item>
+                <mat-list-item role="listitem">Fecha siguiente: {{inyeccion.fecha_sgte | dateInyeccion}}</mat-list-item>
             </mat-card-content>
           </mat-card>
           </mat-list>
