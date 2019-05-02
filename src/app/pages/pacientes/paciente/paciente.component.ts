@@ -26,6 +26,7 @@ export class PacienteComponent implements OnInit, OnDestroy {
     this.paramsSubscription =  this.activatedRoute.params.subscribe( ({id}) => {
       this.vacunaServiceSubscription = this.vacunaService.showVacunaPaciente(id).subscribe( resp => {
         this.vacunas = resp.data;
+        console.log( this.vacunas );
       });
     });
   }

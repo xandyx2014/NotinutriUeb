@@ -13,10 +13,20 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import * as datefn from 'date-fns';
 import Swal from 'sweetalert2';
 import { InyeccionService } from 'src/app/services/inyeccion.service';
+import { DateAdapter, MAT_DATE_FORMATS } from '@angular/material';
+import { AppDateAdapter, APP_DATE_FORMATS } from './date.adapter';
 @Component({
   selector: 'app-inyeccion',
   templateUrl: './inyeccion.component.html',
-  styleUrls: ['./inyeccion.component.css']
+  styleUrls: ['./inyeccion.component.css'],
+  providers: [
+    {
+        provide: DateAdapter, useClass: AppDateAdapter
+    },
+    {
+        provide: MAT_DATE_FORMATS, useValue: APP_DATE_FORMATS
+    }
+    ]
 })
 export class InyeccionComponent implements OnInit, OnDestroy {
   activatedSubscription = new Subscription();
@@ -84,6 +94,7 @@ export class InyeccionComponent implements OnInit, OnDestroy {
   }
 
   crearInyeccion() {
+    console.log( datefn.format(this.myForm.value.fecha_inyectada, 'YYYY/MM/DD') );
     this.inyeccionService.storeInyeccion({
       ...this.myForm.value,
       fecha_inyectada: datefn.format(this.myForm.value.fecha_inyectada, 'YYYY/MM/DD'),
